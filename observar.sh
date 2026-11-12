@@ -5,7 +5,6 @@
 #
 # Uso:  bash observar.sh            (consulta a cada 15 s)
 #       bash observar.sh 5          (consulta a cada 5 s)
-#       bash observar.sh | tee evidencias/renovacao.txt   (guarda a evidência)
 # Interromper: Ctrl + C
 # A hora mostrada é a do Codespace (UTC, 3 horas à frente de Brasília).
 # ---------------------------------------------------------------------------

@@ -11,7 +11,7 @@
   "customizations": {
     "codespaces": {
       "openFiles": [
-        "docs/01-revisao-teorica.md"
+        "README.md"
       ]
     },
     "vscode": {

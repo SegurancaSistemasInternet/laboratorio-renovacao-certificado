@@ -13,10 +13,9 @@ sudo chmod o+r /usr/share/keyrings/caddy-stable-archive-keyring.gpg
 sudo chmod o+r /etc/apt/sources.list.d/caddy-stable.list
 sudo apt-get update -y
 sudo apt-get install -y caddy
-chmod +x observar.sh scripts/*.sh
+chmod +x observar.sh
 echo
 echo "============================================================"
 echo " Ambiente pronto: Caddy $(caddy version | cut -d' ' -f1) · $(openssl version)"
-echo " 1. Leia docs/01-revisao-teorica.md"
-echo " 2. Siga docs/02-roteiro.md"
+echo " Siga o README.md (Etapa 0, Checkpoint 0)"
 echo "============================================================"
