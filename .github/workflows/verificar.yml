@@ -1,0 +1,21 @@
+name: Verificar entrega
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verificar:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v4
+
+      - name: Verificar evidências, configuração, segredos e respostas
+        if: hashFiles('evidencias/renovacao.txt') != ''
+        run: bash scripts/verificar.sh
+
+      - name: Ainda não há entrega
+        if: hashFiles('evidencias/renovacao.txt') == ''
+        run: echo "Nenhuma evidência em evidencias/ ainda. Siga docs/02-roteiro.md e faça o commit da etapa 6."

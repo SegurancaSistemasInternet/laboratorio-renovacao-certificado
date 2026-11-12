@@ -1,0 +1,23 @@
+{
+  // Ambiente do laboratório no GitHub Codespaces.
+  // O Codespace é uma máquina Linux na nuvem: o aluno usa só o navegador
+  // e não precisa de acesso administrativo ao computador do laboratório.
+  "name": "Lab — Renovação automática de certificados (Caddy)",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "hostRequirements": {
+    "cpus": 2
+  },
+  "postCreateCommand": "bash .devcontainer/pos-criacao.sh",
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "docs/01-revisao-teorica.md"
+      ]
+    },
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}

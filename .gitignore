@@ -1,0 +1,12 @@
+# Log do Caddy gerado durante a aula (pode ser grande; não faz parte da entrega)
+caddy.log
+
+# Segredos: nunca versionar
+*.key
+*.pfx
+*.p12
+
+# Sistema e editores
+.DS_Store
+Thumbs.db
+.vscode/
