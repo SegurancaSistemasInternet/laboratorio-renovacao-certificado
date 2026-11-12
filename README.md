@@ -4,7 +4,7 @@
 
 Neste laboratório você vai colocar no ar o **PortalAgenda** da Cais Azul, empresa fictícia de logística portuária usada nas aulas, com o servidor web **Caddy**. O Caddy tem uma **autoridade certificadora (AC) interna** e emite o certificado do próprio site. Esse certificado vai valer só **10 minutos** — e você vai ver o Caddy trocá-lo sozinho quando 2/3 da validade tiverem passado, sem ninguém lembrar e sem o site sair do ar.
 
-Tudo roda no **GitHub Codespaces**, uma máquina Linux na nuvem acessada pelo navegador: **não é preciso instalar nada nem ter acesso de administrador** no computador do laboratório.
+Tudo roda no **GitHub Codespaces**, uma máquina Linux na nuvem acessada pelo navegador: **não é preciso instalar nada nem ter acesso de administrador** no computador do laboratório. Você vai trabalhar numa **cópia deste repositório na sua própria conta do GitHub**, com um Codespace seu.
 
 ---
 
@@ -84,17 +84,18 @@ emissão                     renovação começa          vencimento
 ### Etapa 0 — Preparar o ambiente (5 min)
 
 1. Confira se você já **baixou o modelo de entrega** e o deixou aberto no Word ([link acima](#antes-de-tudo-o-que-você-vai-entregar)). Preencha nome, RA, turma e data.
-2. Entre no GitHub com a sua conta.
-3. Nesta página do repositório, clique no botão verde **Code → aba Codespaces → Create codespace on main**.
-4. Aguarde: na primeira vez, a criação e a instalação do Caddy levam de 2 a 3 minutos. O editor abre no navegador, com este README à esquerda e um terminal embaixo.
-5. Quando a instalação terminar, confira as versões:
+2. Entre no GitHub com a **sua conta**.
+3. **Crie a sua cópia deste repositório:** acima da lista de arquivos desta página, ao lado do botão **Code**, clique no botão verde **Use this template → Create a new repository**. Em *Owner*, escolha a **sua conta**; dê um nome (por exemplo, `laboratorio-renovacao-certificado`) e clique em **Create repository**.
+4. **Na sua cópia** (confira que o endereço no navegador começa com `github.com/SEU-USUARIO/`), clique no botão verde **Code → aba Codespaces → Create codespace on main**. Assim o Codespace fica na sua conta e usa a sua cota.
+5. Aguarde: na primeira vez, a criação e a instalação do Caddy levam de 2 a 3 minutos. O editor abre no navegador, com este README à esquerda e um terminal embaixo.
+6. Quando a instalação terminar, confira as versões:
 
 ```bash
 caddy version
 openssl version
 ```
 
-> ✅ **CHECKPOINT 0** — O terminal mostrou a mensagem **"Ambiente pronto"**, a versão do Caddy começa com **v2** e a do OpenSSL com **3**.
+> ✅ **CHECKPOINT 0** — O Codespace está aberto a partir da **sua cópia** do repositório (no GitHub, ele aparece em **Code → Codespaces** da sua cópia), o terminal mostrou a mensagem **"Ambiente pronto"**, a versão do Caddy começa com **v2** e a do OpenSSL com **3**.
 
 ### Etapa 1 — Subir o servidor (3 min)
 
@@ -229,7 +230,7 @@ Ao iniciar, o Caddy encontra o certificado guardado já dentro da janela de reno
 > ❓ **PERGUNTA 3** — Este laboratório não mostrou uma das etapas do protocolo ACME. Qual é ela, e por que não aconteceu aqui? *(Dica: releia a Parte 1.)*
 
 1. Pare o `observar.sh` (**Ctrl + C** no terminal 2) e o Caddy (**Ctrl + C** no terminal 1).
-2. **Pare o Codespace** para não gastar a sua cota mensal: no GitHub, **Code → Codespaces → ⋯ → Stop codespace**. Depois de receber a nota, você pode excluí-lo.
+2. **Pare o Codespace** para não gastar a sua cota mensal: na **sua cópia** do repositório no GitHub, **Code → Codespaces → ⋯ → Stop codespace**. Depois de receber a nota, você pode excluí-lo.
 3. Confira o documento de entrega:
 
 > ✅ **CHECKPOINT FINAL**
@@ -246,6 +247,8 @@ Ao iniciar, o Caddy encontra o certificado guardado já dentro da janela de reno
 
 | Sintoma | O que fazer |
 |---|---|
+| Não encontro o botão **Use this template** | Ele fica na página do repositório da disciplina, acima da lista de arquivos, ao lado do botão **Code**. É preciso estar logado no GitHub. |
+| Criei o Codespace no repositório da disciplina, e não na minha cópia | Pare e exclua esse Codespace (**Code → Codespaces → ⋯ → Delete**), volte ao passo 3 da Etapa 0 e crie o Codespace a partir da sua cópia. |
 | O Codespace não terminou de instalar ou não mostrou "Ambiente pronto" | Espere mais um pouco. Se o terminal mostrar erro, rode `bash .devcontainer/pos-criacao.sh`. |
 | `caddy: command not found` | A instalação ainda não terminou ou falhou: rode `bash .devcontainer/pos-criacao.sh`. |
 | O Caddy recusou a linha `renewal_window_ratio` | Apague essa linha do `Caddyfile` (o padrão já é 2/3) e suba o Caddy de novo. |
