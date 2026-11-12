@@ -1,6 +1,6 @@
 # Laboratório: renovação automática de certificados, ao vivo
 
-> Disciplina **Segurança de Sistemas** · Bloco 2 (a conexão web) · ⏱️ cerca de 50 minutos
+> Disciplina **Segurança de Sistemas** · Bloco 2 (a conexão web) · ⏱️ cerca de 45 a 50 minutos
 
 Neste laboratório você vai colocar no ar o **PortalAgenda** da Cais Azul, empresa fictícia de logística portuária usada nas aulas, com o servidor web **Caddy**. O Caddy tem uma **autoridade certificadora (AC) interna** e emite o certificado do próprio site. Esse certificado vai valer só **10 minutos** — e você vai ver o Caddy trocá-lo sozinho quando 2/3 da validade tiverem passado, sem ninguém lembrar e sem o site sair do ar.
 
@@ -40,6 +40,22 @@ Você vai preencher um **documento Word** durante a atividade e enviá-lo na **t
 | ❓ Pergunta 2 | Etapa 4 |
 | 📸 Evidência 6 — servidor desligado e religado | Etapa 5 |
 | ❓ Pergunta 3 | Etapa 6 |
+
+**Quanto tempo leva**
+
+| Parte | O que você faz | Tempo esperado | Tempo acumulado |
+|---|---|---|---|
+| Parte 1 | Ler o essencial da teoria | 5 min | 5 min |
+| Etapa 0 | Criar a cópia do repositório, baixar o modelo e abrir o Codespace | 7 min | 12 min |
+| Etapa 1 | Subir o servidor · 📸 Evidência 1 | 3 min | 15 min |
+| Etapa 2 | Conhecer a AC interna · 📸 Evidência 2 | 3 min | 18 min |
+| Etapa 3 | Acessar o site e ver o certificado · 📸 Evidências 3 e 4 · ❓ Pergunta 1 | 6 min | 24 min |
+| Etapa 4 | Assistir à renovação · 📸 Evidência 5 · ❓ Pergunta 2 | 8 a 10 min | 32 a 34 min |
+| Etapa 5 | Desligar e religar o servidor · 📸 Evidência 6 | 8 min | 40 a 42 min |
+| Etapa 6 | ❓ Pergunta 3, encerrar o Codespace e enviar no Teams | 5 min | 45 a 47 min |
+| **Total** | | **cerca de 45 a 50 min** | |
+
+> ⏱️ As etapas 4 e 5 dependem do relógio do certificado, não da sua velocidade: a troca acontece a cada 7 minutos, aproximadamente. Use a espera para responder às perguntas. Se uma etapa passar muito do tempo esperado, consulte [Problemas comuns](#problemas-comuns) ou chame o professor.
 
 ---
 
