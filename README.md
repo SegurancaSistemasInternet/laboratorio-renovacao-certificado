@@ -12,7 +12,7 @@ Tudo roda no **GitHub Codespaces**, uma máquina Linux na nuvem acessada pelo na
 
 Você vai preencher um **documento Word** durante a atividade e enviá-lo na **tarefa do Teams**.
 
-1. **Baixe o modelo agora:** [⬇️ Modelo-Entrega-Renovacao-Certificado.docx](https://github.com/SegurancaSistemasInternet/laboratorio-renovacao-certificado/raw/main/entrega/Modelo-Entrega-Renovacao-Certificado.docx)
+1. O modelo é o arquivo [`entrega/Modelo-Entrega-Renovacao-Certificado.docx`](entrega/Modelo-Entrega-Renovacao-Certificado.docx), que vem junto com a **sua cópia** do repositório. Você vai baixá-lo na **Etapa 0**, logo depois de criar a cópia.
 2. Abra o arquivo no Word e deixe-o aberto ao lado do navegador.
 3. Ao longo do roteiro, sempre que aparecer **📸 EVIDÊNCIA**, tire um print e cole no quadro correspondente do documento.
 4. No fim, responda às **3 perguntas**, salve como `Entrega-Renovacao-SeuNome.docx` e envie na tarefa do Teams.
@@ -81,12 +81,12 @@ emissão                     renovação começa          vencimento
 
 > ⏰ **O relógio começa na Etapa 1.** O primeiro certificado é emitido assim que o servidor sobe e é trocado cerca de 7 minutos depois. Faça as etapas 2 e 3 sem pausas longas. Se perder a primeira troca, não tem problema: outra acontece cerca de 7 minutos depois.
 
-### Etapa 0 — Preparar o ambiente (5 min)
+### Etapa 0 — Preparar o ambiente (7 min)
 
-1. Confira se você já **baixou o modelo de entrega** e o deixou aberto no Word ([link acima](#antes-de-tudo-o-que-você-vai-entregar)). Preencha nome, RA, turma e data.
-2. Entre no GitHub com a **sua conta**.
-3. **Crie a sua cópia deste repositório:** acima da lista de arquivos desta página, ao lado do botão **Code**, clique no botão verde **Use this template → Create a new repository**. Em *Owner*, escolha a **sua conta**; dê um nome (por exemplo, `laboratorio-renovacao-certificado`) e clique em **Create repository**.
-4. **Na sua cópia** (confira que o endereço no navegador começa com `github.com/SEU-USUARIO/`), clique no botão verde **Code → aba Codespaces → Create codespace on main**. Assim o Codespace fica na sua conta e usa a sua cota.
+1. Entre no GitHub com a **sua conta**.
+2. **Crie a sua cópia deste repositório:** acima da lista de arquivos desta página, ao lado do botão **Code**, clique no botão verde **Use this template → Create a new repository**. Em *Owner*, escolha a **sua conta**; dê um nome (por exemplo, `laboratorio-renovacao-certificado`) e clique em **Create repository**.
+3. **Baixe o modelo de entrega da sua cópia:** na página da sua cópia (o endereço no navegador começa com `github.com/SEU-USUARIO/`), abra a pasta **`entrega`**, clique em **`Modelo-Entrega-Renovacao-Certificado.docx`** e use o botão **⬇ Download raw file**, à direita, acima da área do arquivo. Abra o arquivo no Word e preencha nome, RA, turma e data.
+4. **Ainda na sua cópia**, volte à página inicial dela e clique no botão verde **Code → aba Codespaces → Create codespace on main**. Assim o Codespace fica na sua conta e usa a sua cota.
 5. Aguarde: na primeira vez, a criação e a instalação do Caddy levam de 2 a 3 minutos. O editor abre no navegador, com este README à esquerda e um terminal embaixo.
 6. Quando a instalação terminar, confira as versões:
 
@@ -95,7 +95,7 @@ caddy version
 openssl version
 ```
 
-> ✅ **CHECKPOINT 0** — O Codespace está aberto a partir da **sua cópia** do repositório (no GitHub, ele aparece em **Code → Codespaces** da sua cópia), o terminal mostrou a mensagem **"Ambiente pronto"**, a versão do Caddy começa com **v2** e a do OpenSSL com **3**.
+> ✅ **CHECKPOINT 0** — O modelo de entrega está aberto no Word, com a sua identificação. O Codespace está aberto a partir da **sua cópia** do repositório (no GitHub, ele aparece em **Code → Codespaces** da sua cópia), o terminal mostrou a mensagem **"Ambiente pronto"**, a versão do Caddy começa com **v2** e a do OpenSSL com **3**.
 
 ### Etapa 1 — Subir o servidor (3 min)
 
@@ -248,7 +248,8 @@ Ao iniciar, o Caddy encontra o certificado guardado já dentro da janela de reno
 | Sintoma | O que fazer |
 |---|---|
 | Não encontro o botão **Use this template** | Ele fica na página do repositório da disciplina, acima da lista de arquivos, ao lado do botão **Code**. É preciso estar logado no GitHub. |
-| Criei o Codespace no repositório da disciplina, e não na minha cópia | Pare e exclua esse Codespace (**Code → Codespaces → ⋯ → Delete**), volte ao passo 3 da Etapa 0 e crie o Codespace a partir da sua cópia. |
+| Criei o Codespace no repositório da disciplina, e não na minha cópia | Pare e exclua esse Codespace (**Code → Codespaces → ⋯ → Delete**), volte ao passo 4 da Etapa 0 e crie o Codespace a partir da sua cópia. |
+| Não consegui baixar o modelo pelo GitHub | Baixe pelo próprio Codespace: no painel de arquivos à esquerda, abra a pasta `entrega`, clique com o botão direito em `Modelo-Entrega-Renovacao-Certificado.docx` e escolha **Download**. |
 | O Codespace não terminou de instalar ou não mostrou "Ambiente pronto" | Espere mais um pouco. Se o terminal mostrar erro, rode `bash .devcontainer/pos-criacao.sh`. |
 | `caddy: command not found` | A instalação ainda não terminou ou falhou: rode `bash .devcontainer/pos-criacao.sh`. |
 | O Caddy recusou a linha `renewal_window_ratio` | Apague essa linha do `Caddyfile` (o padrão já é 2/3) e suba o Caddy de novo. |
